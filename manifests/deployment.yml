@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "rmeaks1-8b22"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "rmeaks1-8b22"
+  template:
+    metadata:
+      labels:
+        app: "rmeaks1-8b22"
+    spec:
+      containers:
+        - name: "rmeaks1-8b22"
+          image: "rmecr1.azurecr.io/rmeaks1"
+          ports:
+          - containerPort: 80
